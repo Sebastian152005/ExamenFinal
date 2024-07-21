@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #000;
+    color: #fff;
+}
+
+.social-navbar {
+    background-color: #c8ff00;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+}
+
+.social-links {
+    list-style: none;
+    margin-right: 30px;
+    padding: 0;
+    display: flex;
+    gap: 50px;
+}
+
+.social-links li {
+    display: flex;
+    align-items: center;
+}
+
+.social-links a {
+    color: #474747;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.social-links a:hover {
+    color: #000000;
+}
+
+.main-navbar {
+    background-color: #000;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-navbar .logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #fff;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item {
+    position: relative;
+    margin-right: 20px;
+}
+
+.menu-link {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s;
+    position: relative; /* Añadir posición relativa para el pseudo-elemento */
+}
+
+.menu-link:hover {
+    color: #f90;
+}
+
+.menu-item::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: transparent; /* Color inicial transparente */
+    transition: width 0.3s, background-color 0.3s; /* Añadir transición para el color de fondo */
+    position: absolute;
+    bottom: -4px; /* Ajustar posición de la línea */
+    left: 0;
+    right: 0;
+}
+
+.menu-item:hover::after {
+    width: 100%;
+    background-color: #f90; /* Color de la línea al hacer hover */
+}
+
+.menu-item.active::after { /* Aplicar estilo cuando está activo */
+    width: 100%;
+    background-color: #f90; /* Color de la línea cuando está activo */
+}
+
+.menu-button .button {
+    padding: 10px 20px;
+    color: #fff;
+    border: 2px solid rgb(200, 255, 0);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-button .button:hover {
+    background-color: rgb(200, 255, 0);
+    color: #000;
+}
+
+.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-opaco */
+    padding: 100px; /* Ajusta el padding según tu diseño */
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content .button {
+    padding: 10px 20px;
+    color: #000;
+    background-color: #c8ff00;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-content .button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+.section-title span {
+    color: #c8ff00;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #b2b2b2;
+}
+
+.tutoriales-grid,
+.columns-grid {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+.tutorial-card {
+    background-color: #c8ff00;
+    border-radius: 15px;
+    padding: 40px; /* Aumenta el padding para hacer los cards más grandes */
+    margin: 20px; /* Margen entre los cards */
+    max-width: 500px; /* Aumenta el ancho máximo */
+    text-align: center;
+    flex: 1; /* Distribución flexible */
+    display: flex;
+    flex-direction: column;
+}
+
+.tutorial-card img {
+    max-width: 100%;
+    border-radius: 15px;
+    border: 4px solid #fff; /* Borde blanco alrededor de la imagen */
+}
+
+.tutorial-card p {
+    margin: 30px 0;
+    color: #474747;
+    font-size: 1.1rem; /* Tamaño de fuente aumentado */
+    line-height: 1.6; /* Espaciado entre líneas */
+    flex-grow: 1; /* Ocupa el espacio restante */
+}
+
+.tutorial-card .button {
+    padding: 15px 30px; /* Ajusta el padding del botón */
+    font-size: 1.2rem; /* Tamaño de fuente del botón */
+    color: #000;
+    background-color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tutorial-card .button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.columns {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.columns-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+    text-align: left;
+    padding-left: 20px; /* Ajusta el espaciado izquierdo según sea necesario */
+    position: relative; /* Para posicionar la línea vertical */
+}
+
+.column:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -10px; /* Ajusta la posición de la línea vertical */
+    width: 2px; /* Grosor de la línea vertical */
+    background-color: #c8ff00; /* Color de la línea vertical */
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+.section-title span {
+    color: #c8ff00;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #b2b2b2;
+}
+
+@media only screen and (max-width: 768px) {
+    .columns-grid {
+        flex-direction: column;
+    }
+
+    .column:not(:last-child)::after {
+        display: none; /* Ocultar línea vertical en dispositivos móviles */
+    }
+
+    .column {
+        padding-left: 0; /* Ajuste para el espaciado interno */
+        margin-bottom: 20px; /* Espacio entre columnas en dispositivos móviles */
+    }
+}
+
+.aplicaciones {
+    background-color: rgb(0, 57, 104);
+    padding: 60px 20px; /* Ajusta el padding superior e inferior para más espacio */
+    text-align: center;
+}
+
+.aplicaciones-content {
+    max-width: 800px; /* Limita el ancho máximo para centrar el contenido */
+    margin: 0 auto; /* Centra horizontalmente el contenido */
+}
+
+.section-title {
+    font-size: 3rem; /* Ajusta el tamaño del título */
+    margin-bottom: 20px; /* Espacio inferior del título */
+}
+
+.section-title span {
+    color: #c8ff00; /* Color del texto resaltado */
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 40px; /* Espacio inferior del subtítulo */
+    color: #b2b2b2; /* Color del texto del subtítulo */
+}
+
+.aplicaciones .aplicaciones-content .button {
+    display: inline-block;
+    padding: 15px 30px; /* Ajusta el padding del botón */
+    background-color: #c8ff00; /* Color de fondo del botón */
+    color: #000; /* Color del texto del botón */
+    text-decoration: none;
+    border-radius: 5px; /* Añade esquinas redondeadas al botón */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+.aplicaciones .aplicaciones-content .button:hover {
+    background-color: #a5cc00; /* Color de fondo del botón al pasar el mouse */
+}
+
+footer {
+    background-color: #0a1245;
+    color: white;
+    padding: 40px 20px; /* Agrega padding a los lados del footer */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around; /* Cambia de space-between a space-around */
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los elementos del footer */
+    padding: 0 20px; /* Agrega padding interno al contenedor del footer */
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    min-width: 220px; /* Incrementa el ancho mínimo para mayor espacio entre secciones */
+    padding: 40px;
+    margin: -10px; /* Añade margen entre las secciones para mayor separación */
+}
+
+.center-section {
+    text-align: center; /* Centra el texto de la sección */
+}
+
+.footer-section h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-section .social-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px; 
+    width: fit-content;
+    border-bottom: 5px solid #fff; 
+    padding-bottom: 10px; 
+}
+
+.footer-section .social-icons a img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-section form {
+    display: flex;
+    align-items: flex-start; 
+    flex-wrap: wrap;
+}
+
+.footer-section form input[type="email"],
+.footer-section form button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px; 
+}
+
+.footer-section form input[type="email"] {
+    flex: 1; 
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.footer-section form button {
+    background-color: #d3ff35;
+    color: black;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 20px; 
+}
+
+.footer-section form button:hover {
+    background-color: #c4e529;
+}
+
+@media only screen and (max-width: 768px) {
+    .main-navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .menu li a {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .menu-button {
+        margin-top: 10px;
+    }
+    
+    .social-navbar {
+        justify-content: center;
+    }
+
+    .main-navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        margin-top: 10px;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background-color: #000;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border-top: 1px solid #444;
+        border-bottom: 1px solid #444;
+    }
+
+    .menu-toggle {
+        margin-top: 20px;
+        display: block;
+    }
+
+    .menu-button {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .tutoriales-grid,
+    .columns-grid,
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tutorial-card,
+    .column,
+    .footer-section {
+        max-width: 100%;
+    }
+}
